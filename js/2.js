@@ -3,7 +3,6 @@ const file = fs.readFileSync("../src/2.txt").toString().split("\n")
 
 const Win = (a) => a + 6
 const Draw = (a) => a + 3
-const Lose = (a) => a
 
 const getWin = (a) => (a + 1 < 4 ? a + 1 : 1)
 const getLose = (a) => (a - 1 ? a - 1 : 3)
@@ -14,7 +13,7 @@ const compare1 = ([a, b]) => {
   if (a === b) return Draw(b)
   switch (calc(a, b)) {
     case 1: // ROCK
-      return Lose(b) // SCISSOR
+      return b // SCISSOR
     case 2: // PAPER
       return Win(b) // ROCK
   }
@@ -24,7 +23,7 @@ const compare2 = ([a, b]) => {
   if (b === 2) return Draw(a)
   switch (b) {
     case 1: // LOSE
-      return Lose(getLose(a))
+      return getLose(a)
     case 3: // WIN
       return Win(getWin(a))
   }
