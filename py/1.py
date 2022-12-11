@@ -16,5 +16,4 @@ res = reduce(totalUp, fileNums, [])
 res.sort(reverse=True)
 
 print("The highest amount of calories an elf is carrying is:", res[0])
-
 print("The top 3 elves are carrying a total of", sum(res[:3]), "calories")
