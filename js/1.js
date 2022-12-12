@@ -1,6 +1,6 @@
 let fs = require("fs")
 
-let arr = fs.readFileSync("../src/1_input.txt").toString().split("\n")
+let arr = fs.readFileSync("../src/1.txt").toString().split("\n")
 let totals = arr.reduce((total, curr) => {
   if (curr === "" || !total.length) {
     total.push(0)

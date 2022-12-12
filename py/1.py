@@ -1,6 +1,6 @@
 from functools import reduce
 
-f = open("../src/1_input.txt")
+f = open("../src/1.txt")
 fileNums = f.read().splitlines()
 
 
