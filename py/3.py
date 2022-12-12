@@ -27,20 +27,14 @@ def splitThree(lines):
 
 
 def match(*args):
-    match = ""
     rest = args[0][1:len(args[0])]
     for char in args[0][0]:
         bool_list = []
         for ch in rest:
-            if (char in ch):
-                bool_list.append(True)
-            else:
-                bool_list.append(False)
+            bool_list.append(True if char in ch else False)
 
         if (all(bool_list)):
-            match = char
-            break
-    return match
+            return char
 
 
 data = read()
