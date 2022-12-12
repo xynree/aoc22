@@ -15,7 +15,7 @@ const splitThree = (res, line, i) => {
   return res
 }
 
-const findMatch = (args) => {
+const match = (args) => {
   let match
   Array.from(args[0]).forEach((char) => {
     if (args.slice(1).every((str) => [...str].includes(char))) {
@@ -27,6 +27,6 @@ const findMatch = (args) => {
 }
 
 const data = read("../src/3.txt")
-const partOne = data.map(splitTwo).map(findMatch).map(convToNum).reduce(sum, 0)
-const partTwo = data.reduce(splitThree, []).map(findMatch).map(convToNum).reduce(sum, 0)
+const partOne = data.map(splitTwo).map(match).map(convToNum).reduce(sum, 0)
+const partTwo = data.reduce(splitThree, []).map(match).map(convToNum).reduce(sum, 0)
 console.log("Part 1 Sum:", partOne, "\n", "Part 2 Sum:", partTwo)
