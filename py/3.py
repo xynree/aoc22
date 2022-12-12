@@ -1,5 +1,4 @@
 from functools import reduce
-import math
 
 
 def read():
@@ -12,8 +11,8 @@ def convToNum(c):
 
 
 def splitTwo(str):
-    half = math.floor(len(str)/2)
-    return [str[slice(0, half)], str[slice(half, len(str))]]
+    half = len(str)//2
+    return [str[:half], str[half:len(str)]]
 
 
 def splitThree(lines):
@@ -29,10 +28,10 @@ def splitThree(lines):
 
 def match(*args):
     match = ""
-
+    rest = args[0][1:len(args[0])]
     for char in args[0][0]:
         bool_list = []
-        for ch in args[0][slice(1, len(args[0]))]:
+        for ch in rest:
             if (char in ch):
                 bool_list.append(True)
             else:
