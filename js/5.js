@@ -21,7 +21,7 @@ const getBlocks = (data) =>
     })
     .reduce(
       buildStack,
-      Array.from(Array(9), () => [])
+      Array.from({ length: 9 }, () => [])
     )
     .map((ln) => ln.reverse())
 
