@@ -11,12 +11,8 @@ repla :: String -> String
 repla "" = "0"
 repla str = str
 
-main :: IO ()
-main = do 
-  ints:: [Int] <- foldl totalUp [] .map read . map repla . lines <$> readFile "../src/1.txt"
-  let part1 = maximum ints
-  let part2 = sum . take 3 .reverse .sort $ ints
-  print part1
-  print part2
+part1 = maximum . foldl' totalUp [] .map read . map repla . lines <$> readFile "../src/1.txt" >>= print
+part2 = sum . take 3 .reverse . sort . foldl' totalUp [] .map read . map repla . lines <$> readFile "../src/1.txt" >>= print
 
-            
+main :: IO ()
+main = do {part1; part2}
