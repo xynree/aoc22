@@ -13,10 +13,9 @@ repla str = str
 
 main :: IO ()
 main = do 
-  f <- readFile "../../src/1.txt"
-  let i:: [Int] = ( foldl totalUp [] .map read . map repla . lines) f
-  let part1 = maximum i
-  let part2 = (sum . take 3 .reverse .sort)i
+  ints:: [Int] <- foldl totalUp [] .map read . map repla . lines <$> readFile "../src/1.txt"
+  let part1 = maximum ints
+  let part2 = (sum . take 3 .reverse .sort)ints
   print part1
   print part2
 
